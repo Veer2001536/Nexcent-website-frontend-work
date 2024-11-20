@@ -1,0 +1,2412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            width: 100%;
+            height: 60px;
+            background-color: #F5F7FA;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+        }
+
+        /* navlogo */
+
+        .logo {
+            width: 200px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        /* links */
+
+        .navlinks ul {
+            /* width: 450px;
+            height: 50px; */
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 50px;
+            position: relative;
+
+        }
+
+
+
+        li a {
+            text-decoration: none;
+            font-size: 15px;
+            color: black;
+        }
+
+        nav .navlinks ul li {
+            position: relative;
+            /* float: left; */
+        }
+
+        /* nav .navlinks ul li a:hover{
+             color: red;
+        } */
+
+        /* nav .navlinks ul li ul {
+            display: block;
+        } */
+        nav .navlinks ul li ul {
+            position: absolute;
+            top: 20px;
+            left: -50px;
+            height: 180px;
+            width: 100px;
+            border-radius: 5px;
+            display: none;
+            
+        }
+
+        nav .navlinks ul li:hover ul {
+            display: block;
+        }
+
+        /* dropdownimage */
+        .dropdownpic {
+            height: 180px;
+            width: 100px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px black;
+            transition:
+                width .500s,
+                height .500s,
+                /* background-color 2s, */
+                rotate .500s;
+        }
+
+        .dropdownpic:hover {
+            background-color: #ffcccc;
+            height: 250px;
+            width: 150px;
+            /* rotate: 180deg; */
+        }
+
+
+
+        /* after links */
+        /* a::after { */
+        /* content: '';
+            width: 0;
+            height: 20px;
+            background: rgba( 141, 34, 232, 0.3 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 7.5px );
+-webkit-backdrop-filter: blur( 7.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+            background: linear-gradient(to right,black, #4CAF4F,blueviolet);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 100ms;
+            border-radius: 10px;
+        }
+
+        a:hover::after {
+            width: 60px;
+        } */
+
+
+        /* buttonsec */
+
+        .buttonsec {
+            width: 240px;
+            height: 50px;
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        button {
+            width: 90px;
+            height: 40px;
+            font-size: 18px;
+            color: #4CAF4F;
+            border-radius: 9px;
+            background-color: #F5F7FA;
+            border: none;
+            font-weight: 500;
+
+        }
+
+        /* loginsec */
+        .loginsec {
+            width: 200px;
+            height: 250px;
+            position: absolute;
+            left: -83px;
+            top: -550px;
+            padding: 0px 20px;
+            transition: all .2s ease-in-out;
+            background: url(./login\ img.jpg);
+            box-shadow: 0 0px 15px 0 rgba(31, 38, 135, 0.37);
+            /* backdrop-filter: blur(3.5px); */
+            /* -webkit-backdrop-filter: blur(3.5px); */
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+
+        }
+
+        .signupsec{
+            width: 200px;
+            height: 250px;
+            position: absolute;
+            left: 125px;
+            top: -550px;
+            padding: 0px 20px;
+            transition: all .2s ease-in-out;
+            background: url(./login\ img.jpg);
+            box-shadow: 0 0px 15px 0 rgba(31, 38, 135, 0.37);
+            /* backdrop-filter: blur(3.5px); */
+            /* -webkit-backdrop-filter: blur(3.5px); */
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        /* .registersec {
+            width: 200px;
+            height: 250px;
+            position: absolute;
+            
+            left: 800px;
+            top: 50px;
+            padding: 0px 20px;
+            transition: all .1s ease-in-out;
+            background: rgba(247, 7, 7, 0.3);
+            box-shadow: 0 15px 15px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(3.5px);
+            -webkit-backdrop-filter: blur(3.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+
+        } */
+
+        button:hover {
+            background-color: #4CAF4F;
+            color: white;
+        }
+
+        .baricon {
+            width: 60px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+            position: relative;
+            
+        }
+
+        .bardiv{
+            width: 200px;
+            height: 400px;
+            background-color: blue;
+            position: absolute;
+            top: 45px;
+            z-index: 1;
+        }
+
+        .bar {
+            font-size: 28px;
+        }
+
+        .userloginsec {
+            width: 60px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+        }
+
+        .bariconsec {
+            width: 60px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+        }
+
+        /* herosec */
+
+        .hero {
+            width: 100%;
+            height: auto;
+            background-color: #F5F7FA;
+            padding: 0px 200px;
+            display: flex;
+            /* flex-wrap: wrap; */
+
+        }
+
+        .herodiv {
+            width: 50%;
+            height: auto;
+            padding: 120px 0px;
+        }
+
+        p {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .smallpara {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: lighter;
+        }
+
+        .herosecbutton {
+            width: 90px;
+            margin-top: 20px;
+            height: 40px;
+            font-size: 16px;
+            background-color: #4CAF4F;
+            border-radius: 4px;
+            color: #F5F7FA;
+            border: none;
+            font-weight: 500;
+            position: relative;
+        }
+
+        /* ragisterdiv */
+        .ragisterdiv {
+            width: 700px;
+            height: 200px;
+            position: absolute;
+            top: 388px;
+    left: -740px;
+            transition: all .2s ease-in-out;
+            background:url(./sign\ in\ sec.jpg);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 10px );
+-webkit-backdrop-filter: blur( 10px );
+border-radius: 5px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
+
+        .herodivsec {
+            width: 50%;
+            height: auto;
+            padding: 50px 0px;
+        }
+
+        .herodivimg {
+            width: 100%;
+            height: 300px;
+            /* margin-left: -110px; */
+        }
+
+        /* clientsec */
+        .clientsec {
+            width: 100%;
+            height: auto;
+            padding: 0px 200px;
+        }
+
+        .clientinfo {
+            width: 100%;
+            height: 80px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 35px;
+        }
+
+        .info {
+            text-align: center;
+            font-size: 18px;
+            font-weight: lighter;
+            margin-top: 7px;
+            font-family: monospace;
+        }
+
+        .iconsec {
+            width: 100%;
+            height: 100px;
+
+        }
+
+        .clientslogo {
+            width: 100%;
+            height: 100px;
+        }
+
+        /* cardsec */
+        .cardsec {
+            width: 100%;
+            height: auto;
+            padding: 20px 100px;
+        }
+
+        .cardinfo {
+            width: 100%;
+            height: 110px;
+        }
+
+        .infocard {
+            text-align: center;
+            font-size: 15px;
+            font-weight: lighter;
+            margin-top: 7px;
+            font-family: monospace;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 38px;
+        }
+
+        .containercards {
+            width: 100%;
+            height: auto;
+            display: flex;
+            gap: 50px;
+            margin-top: 20px;
+            justify-content: space-between;
+        }
+
+        .card {
+            width: 300px;
+            height: 265px;
+            position: relative;
+        }
+
+
+        .cardsimg {
+            width: 300px;
+            height: 260px;
+        }
+
+        /* after and before card work */
+
+        .card::after {
+            content: '';
+            width: 0;
+            height: 4px;
+            background: linear-gradient(to right, #4CAF4F, blueviolet);
+            position: absolute;
+            transition: 100ms;
+            border-radius: 10px;
+            bottom: 0;
+            left: 0;
+        }
+
+        .card:hover::after {
+            width: 300px;
+        }
+
+        .card::before {
+            content: '';
+            width: 0;
+            height: 4px;
+            background: linear-gradient(to right, #4CAF4F, blueviolet);
+            position: absolute;
+            transition: 100ms;
+            border-radius: 10px;
+            top: 0;
+            left: 0;
+        }
+
+        .card:hover::before {
+            width: 300px;
+        }
+
+        /* learnmoresec */
+
+        .learnmoresec {
+            width: 100%;
+            height: auto;
+            background-color: blueviolet;
+            display: flex;
+        }
+
+        .learnmoresecpic {
+            width: 100%;
+            height: 400px;
+            /* margin-left: 150px; */
+        }
+
+        .learnpic {
+            width: 100%;
+            height: 400px;
+        }
+
+        .learndiv {
+            width: 100%;
+            height: auto;
+            padding: 0px 10px;
+            margin-top: 90px;
+            /* margin-right: 100px; */
+            /* margin-left: 200px; */
+        }
+
+        .herosecbuttonlearn {
+            width: 120px;
+            margin-top: 10px;
+            height: 40px;
+            font-size: 16px;
+            background-color: #4CAF4F;
+            border-radius: 4px;
+            color: #F5F7FA;
+            border: none;
+            font-weight: 500;
+        }
+
+        /* javawork */
+        h5 {
+            color: white;
+            font-weight: lighter;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+        }
+
+        .innerusername {
+            height: 30px;
+            width: 100%;
+            padding: 0px 5px;
+            margin-top: 10px;
+            border-radius: 3px;
+            border: none;
+            background: transparent;
+            /* position: relative; */
+            outline: none;
+
+        }
+
+        .innerusername:hover {
+            outline: none;
+            color: white;
+        }
+
+        .username::after {
+            content: '';
+            width: 0;
+            height: 1px;
+            background-color: white;
+            /* background: linear-gradient(to right, #4CAF4F, blueviolet); */
+            position: absolute;
+            transition: 100ms;
+            border-radius: 1px;
+            top: 95px;
+            left: 20px;
+        }
+
+        .username:hover::after {
+            width: 80%;
+        }
+
+        .innerusernamesec {
+            height: 30px;
+            width: 100%;
+            padding: 0px 5px;
+            margin-top: 15px;
+            border-radius: 3px;
+            border: none;
+            background: transparent;
+            position: relative;
+            outline: none;
+        }
+
+        .innerusernamesec:hover {
+            color: white;
+            outline: none;
+        }
+
+        .usernamesec::after {
+            content: '';
+            width: 0;
+            height: 1px;
+            background-color: white;
+            /* background: linear-gradient(to right, #4CAF4F, blueviolet); */
+            position: absolute;
+            transition: 100ms;
+            border-radius: 1px;
+            top: 140px;
+            left: 20px;
+        }
+
+        .usernamesec:hover::after {
+            width: 80%;
+        }
+
+        h6 {
+            color: white;
+            /* align-items: center; */
+            font-size: 23px;
+            margin: 0px 29%;
+            margin-top: 30px;
+            /* position: relative; */
+        }
+        .sign{
+            color: white;
+            font-size: 20px;
+            margin: 0px 29%;
+            margin-top: 30px;
+        }
+
+        .checksec {
+            width: max-content;
+            height: 20px;
+            display: flex;
+            gap: 7px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4px;
+        }
+
+        .forgotsec a {
+            font-size: 9px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        .forgotsec a::after {
+            display: none;
+        }
+
+        .submit {
+            width: 70px;
+            height: 25px;
+            font-size: 14px;
+            margin-left: 42px;
+            margin-top: 15px;
+            border-radius: 4px;
+            background: transparent;
+            text-align: center;
+            color: white;
+            border: 1px solid white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .loginnotesec {
+            font-size: 10px;
+            font-weight: lighter;
+            margin-top: 5px;
+            color: rgb(32, 29, 29);
+            border: none;
+        }
+
+        /* media work */
+
+
+        @media only screen and (max-width: 1024px) {
+
+            /* navwork */
+
+            nav {
+                width: 100%;
+                height: 60px;
+                background-color: #F5F7FA;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0px 20px;
+
+            }
+
+            .bariconsec {
+                width: 60px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                display: block;
+            }
+
+            .barsec {
+                font-size: 30px;
+                margin-top: 10px;
+                margin-left: 15px;
+            }
+
+            /* links */
+
+            .navlinks ul {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                list-style: none;
+                /* gap: 30px; */
+
+            }
+
+           li a {
+                text-decoration: none;
+                font-size: 18px;
+                color: black;
+                position: relative;
+            }
+
+            
+
+            /* button sec */
+
+
+            .buttonsec {
+                width: 240px;
+                height: 50px;
+                gap: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            button {
+                width: 90px;
+                height: 40px;
+                font-size: 18px;
+                color: #4CAF4F;
+                border-radius: 9px;
+                background-color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                display: block;
+
+            }
+
+            /* herowrk */
+
+            .hero {
+                width: 100%;
+                height: auto;
+                background-color: #F5F7FA;
+                padding: 0;
+                display: flex;
+                padding: 0px 100px;
+                /* flex-direction: column; */
+                /* flex-wrap: wrap; */
+
+            }
+
+            .herodiv {
+                width: 100%;
+                height: auto;
+                padding: 50px 4px;
+                /* margin-left: 100px; */
+            }
+
+
+            .herodivsec {
+                width: 100%;
+                height: auto;
+                padding: 15px 0px;
+            }
+
+            .herodivimg {
+                width: 100%;
+                height: 250px;
+            }
+
+            .herosecbutton {
+                width: 90px;
+                margin-top: 20px;
+                height: 40px;
+                font-size: 16px;
+                background-color: #4CAF4F;
+                border-radius: 4px;
+                color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                position: relative;
+                display: block;
+            }
+
+            /* cardwork */
+            .containercards {
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-top: 20px;
+                justify-content: space-between;
+                /* flex-wrap: wrap; */
+                gap: 10px;
+            }
+
+            /* client sec */
+            .clientsec {
+                width: 100%;
+                height: auto;
+                padding: 0px 100px;
+            }
+
+            .clientinfo {
+                width: 100%;
+                height: 80px;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 35px;
+            }
+
+            .info {
+                text-align: center;
+                font-size: 16px;
+                font-weight: lighter;
+                margin-top: 7px;
+                font-family: monospace;
+            }
+
+            .iconsec {
+                width: auto;
+                height: 70px;
+
+            }
+
+            .clientslogo {
+                width: 100%;
+                height: 70px;
+            }
+
+            /* cardsec */
+            .cardsec {
+                width: 100%;
+                height: auto;
+                padding: 5px 50px;
+            }
+
+            .cardinfo {
+                width: 100%;
+                height: auto;
+            }
+
+            .infocard {
+                text-align: center;
+                font-size: 15px;
+                font-weight: lighter;
+                margin-top: 7px;
+                font-family: monospace;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 38px;
+            }
+
+            .containercards {
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-top: 10px;
+                padding: 0;
+                justify-content: space-between;
+            }
+
+            .card {
+                width: 300px;
+                height: 265px;
+                position: relative;
+            }
+
+
+            .cardsimg {
+                width: 300px;
+                height: 260px;
+            }
+
+            /* learn more */
+            .learnmoresec {
+                width: 100%;
+                height: auto;
+                background-color: blueviolet;
+                display: flex;
+                padding: 0px 50px;
+            }
+
+            .learnmoresecpic {
+                width: 100%;
+                height: 360px;
+                margin-left: 0;
+            }
+
+            .learnpic {
+                width: 100%;
+                height: 360px;
+            }
+
+            .learndiv {
+                width: 100%;
+                height: auto;
+                margin-top: 0;
+                padding: 32px 0px
+                    /* margin-right: 200px; */
+                    /* margin-left: 130px; */
+            }
+
+            .herosecbuttonlearn {
+                width: 120px;
+                margin-top: 20px;
+                height: 40px;
+                font-size: 16px;
+                background-color: #4CAF4F;
+                border-radius: 4px;
+                color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                display: block;
+            }
+
+            /* script */
+            .ragisterdiv {
+            width: 600px;
+            height: 150px;
+            position: absolute;
+            top: 322px;
+    left: -750px;
+            transition: all .2s ease-in-out;
+            background:url(./sign\ in\ sec.jpg);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 10px );
+-webkit-backdrop-filter: blur( 10px );
+border-radius: 5px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
+
+
+        .loginsec {
+            width: 200px;
+            height: 250px;
+            position: absolute;
+            left: -83px;
+            top: -550px;
+            padding: 0px 20px;
+            transition: all .2s ease-in-out;
+            background: url(./login\ img.jpg);
+            box-shadow: 0 0px 15px 0 rgba(31, 38, 135, 0.37);
+            /* backdrop-filter: blur(3.5px); */
+            /* -webkit-backdrop-filter: blur(3.5px); */
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+
+        }
+
+        .signupsec{
+            width: 200px;
+            height: 250px;
+            position: absolute;
+            left: 125px;
+            top: -550px;
+            padding: 0px 20px;
+            transition: all .2s ease-in-out;
+            background: url(./login\ img.jpg);
+            box-shadow: 0 0px 15px 0 rgba(31, 38, 135, 0.37);
+            /* backdrop-filter: blur(3.5px); */
+            /* -webkit-backdrop-filter: blur(3.5px); */
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        }
+
+
+        @media only screen and (max-width: 780px) {
+
+            /* navwork */
+            .baricon {
+            width: 60px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* display: block; */
+            position: relative;
+            
+        }
+
+        .bardiv{
+            width: 200px;
+            height: 400px;
+            background-color: blue;
+            position: absolute;
+            top: 45px;
+            left: -10px;
+            z-index: 1;
+        }
+
+
+            .logo {
+                width: 200px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* margin-left: -200px; */
+
+            }
+
+            .bar {
+                font-size: 28px;
+            }
+
+            .bariconsec {
+                width: 60px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                display: none;
+            }
+
+            .navlinks ul {
+                display: none;
+            }
+
+            /* button sec */
+
+            .buttonsec {
+                width: 240px;
+                height: 50px;
+                gap: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
+                /* margin-left: -200px; */
+            }
+
+            button {
+                width: 90px;
+                height: 40px;
+                font-size: 18px;
+                color: #4CAF4F;
+                border-radius: 9px;
+                background-color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                display: block;
+
+            }
+
+            /* herowrk */
+
+            .hero {
+                width: 100%;
+                height: auto;
+                background-color: #F5F7FA;
+                padding: 0;
+                display: flex;
+                padding: 0px 20px;
+                /* flex-direction: column-reverse; */
+                /* flex-wrap: wrap; */
+
+            }
+
+            .herodiv {
+                width: 100%;
+                height: auto;
+                padding: 35px 20px;
+            }
+
+
+            .herodivsec {
+                width: 100%;
+                height: auto;
+                padding: 10px 0px;
+            }
+
+            .herodivimg {
+                width: 100%;
+                height: 250px;
+            }
+
+            p {
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .smallpara {
+                font-size: 16px;
+                margin-top: 10px;
+                font-weight: lighter;
+            }
+
+            .herosecbutton {
+                width: 90px;
+                margin-top: 20px;
+                height: 40px;
+                font-size: 16px;
+                background-color: #4CAF4F;
+                border-radius: 4px;
+                color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                position: relative;
+            }
+
+            /* cardwork */
+            .containercards {
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-top: 20px;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            /* client sec */
+            .clientsec {
+                width: 100%;
+                height: auto;
+                padding: 0px 50px;
+            }
+
+            .clientinfo {
+                width: 100%;
+                height: 80px;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 35px;
+            }
+
+            .info {
+                text-align: center;
+                font-size: 16px;
+                font-weight: lighter;
+                margin-top: 7px;
+                font-family: monospace;
+            }
+
+            .iconsec {
+                width: auto;
+                height: 70px;
+
+            }
+
+            .clientslogo {
+                width: 100%;
+                height: 70px;
+            }
+
+            /* cardsec */
+            .cardsec {
+                width: 100%;
+                height: auto;
+                padding: 5px 5px;
+            }
+
+            .cardinfo {
+                width: 100%;
+                height: auto;
+            }
+
+            .infocard {
+                text-align: center;
+                font-size: 15px;
+                font-weight: lighter;
+                margin-top: 7px;
+                font-family: monospace;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 35px;
+            }
+
+            .containercards {
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-top: 20px;
+                padding: 0px 130px;
+                justify-content: space-between;
+            }
+
+            .card {
+                width: 238px;
+                height: 245px;
+                position: relative;
+            }
+
+
+            .cardsimg {
+                width: 238px;
+                height: 245px;
+            }
+
+            /* learn more */
+            .learnmoresec {
+                width: 100%;
+                height: auto;
+                background-color: blueviolet;
+                display: flex;
+                /* flex-direction: column; */
+            }
+
+            .learnmoresecpic {
+                width: 100%;
+                height: 300px;
+                margin-left: 0;
+            }
+
+            .learnpic {
+                width: 100%;
+                height: 310px;
+            }
+
+            .learndiv {
+                width: 100%;
+                height: auto;
+                margin-top: 0;
+                padding: 30px 0px;
+                /* margin-right: 200px; */
+                /* margin-left: 130px; */
+            }
+
+            .herosecbuttonlearn {
+                width: 120px;
+                margin-top: 20px;
+                margin-left: 100px;
+                height: 40px;
+                font-size: 16px;
+                background-color: #4CAF4F;
+                border-radius: 4px;
+                color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                display: block;
+            }
+
+
+        }
+
+        @media only screen and (max-width: 425px) {
+
+            /* navwork */
+
+            /* nav{
+    display: flex;
+    justify-content: center;
+} */
+            .baricon {
+                width: 60px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                margin-top: 0;
+                justify-content: center;
+            }
+
+            .logo {
+                width: 200px;
+                height: 50px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* margin-left: -200px; */
+
+            }
+
+            .bar {
+                font-size: 25px;
+                margin-top: -1px;
+            }
+
+            .userloginsec {
+                width: 60px;
+                height: 40px;
+                display: flex;
+            align-items: center;
+            justify-content: center;
+                display: block;
+                /* margin-top: 0; */
+             
+            }
+
+            .user {
+                
+                font-size: 10px;
+                /* margin-top: 12px;
+                margin-top: 8px; */
+            }
+
+            .bariconsec {
+                width: 60px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                display: none;
+            }
+
+           .navlinks ul {
+                display: none;
+            }
+
+            /* button sec */
+
+            .buttonsec {
+                width: 60px;
+                height: 50px;
+                gap: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
+
+            }
+
+            button {
+                width: 90px;
+                height: 40px;
+                font-size: 18px;
+                color: #4CAF4F;
+                border-radius: 9px;
+                background-color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                display: none;
+
+            }
+
+            /* herowrk */
+
+            .hero {
+                width: 100%;
+                height: auto;
+                background-color: #F5F7FA;
+                padding: 0;
+                display: flex;
+                padding: 0px 20px;
+                flex-direction: column-reverse;
+                /* flex-wrap: wrap; */
+
+            }
+
+            .herodiv {
+                width: 100%;
+                height: auto;
+                padding: 35px 20px;
+            }
+
+
+            .herodivsec {
+                width: 100%;
+                height: auto;
+                padding: 10px 0px;
+            }
+
+            .herodivimg {
+                width: 100%;
+                height: 220px;
+            }
+
+            p {
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .smallpara {
+                font-size: 16px;
+                margin-top: 10px;
+                font-weight: lighter;
+            }
+
+            .herosecbutton {
+                width: 80px;
+                margin-top: 20px;
+                height: 34px;
+                font-size: 16px;
+                background-color: #4CAF4F;
+                border-radius: 4px;
+                color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                position: relative;
+            }
+
+            /* cardwork */
+            .containercards {
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-top: 20px;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            /* client sec */
+            .clientsec {
+                width: 100%;
+                height: auto;
+                padding: 0px 50px;
+            }
+
+
+            .clientinfo {
+                width: 100%;
+                height: 80px;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 25px;
+            }
+
+
+            .info {
+                text-align: center;
+                font-size: 16px;
+                font-weight: lighter;
+                margin-top: 7px;
+                font-family: monospace;
+            }
+
+            .iconsec {
+                width: auto;
+                height: 70px;
+
+            }
+
+            .clientslogo {
+                width: 100%;
+                height: 70px;
+            }
+
+            /* cardsec */
+            .cardsec {
+                width: 100%;
+                height: auto;
+                padding: 0;
+            }
+
+            .cardinfo {
+                width: 100%;
+                height: 110px;
+            }
+
+
+
+            .infocard {
+                text-align: center;
+                font-size: 15px;
+                font-weight: lighter;
+                margin-top: 7px;
+                font-family: monospace;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 38px;
+            }
+
+            .containercards {
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-top: 20px;
+                padding: 8px 90px;
+                justify-content: space-between;
+            }
+
+            .card {
+                width: 250px;
+                height: 245px;
+                position: relative;
+            }
+
+
+            .cardsimg {
+                width: 250px;
+                height: 240px;
+            }
+
+            .cardinfo {
+                width: 100%;
+                height: auto;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: x-large;
+            }
+
+            /* learn more */
+            .learnmoresec {
+                width: 100%;
+                height: auto;
+                background-color: blueviolet;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .learnmoresecpic {
+                width: 100%;
+                height: 270px;
+                margin-left: 0;
+            }
+
+            .learnpic {
+                width: 100%;
+                height: 270px;
+            }
+
+            p {
+                font-size: 28px;
+            }
+
+            .smallpara {
+                font-size: 14px;
+                margin-top: 10px;
+                font-weight: lighter;
+            }
+
+            .learndiv {
+                width: 100%;
+                height: auto;
+                margin-top: 0;
+                padding: 5px 0px;
+                /* margin-right: 200px; */
+                /* margin-left: 130px; */
+            }
+
+            .herosecbuttonlearn {
+                width: 100px;
+                margin-top: 10px;
+                margin-left: 107px;
+                height: 34px;
+                font-size: 16px;
+                background-color: #4CAF4F;
+                border-radius: 4px;
+                color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                display: block;
+            }
+
+
+        }
+
+        @media only screen and (max-width: 375px) {
+
+            /* navwork */
+
+            /* nav{
+display: flex;
+justify-content: center;
+} */
+            .baricon {
+                width: 60px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                margin-top: 0;
+                justify-content: center;
+            }
+
+            .logo {
+                width: 200px;
+                height: 50px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* margin-left: -200px; */
+
+            }
+
+            .bar {
+                font-size: 25px;
+                margin-top: -1px;
+            }
+
+            .userloginsec {
+                width: 60px;
+                height: 40px;
+                /* display: flex;
+align-items: center;
+justify-content: center; */
+                display: block;
+                margin-top: 0;
+            }
+
+            .user {
+                font-size: 25px;
+                margin-top: 12px;
+                margin-top: 8px;
+            }
+
+            .bariconsec {
+                width: 60px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                display: none;
+            }
+
+            ul {
+                display: none;
+            }
+
+            /* button sec */
+
+            .buttonsec {
+                width: 60px;
+                height: 50px;
+                gap: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
+
+            }
+
+            button {
+                width: 90px;
+                height: 40px;
+                font-size: 18px;
+                color: #4CAF4F;
+                border-radius: 9px;
+                background-color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                display: none;
+
+            }
+
+            /* herowrk */
+
+            .hero {
+                width: 100%;
+                height: auto;
+                background-color: #F5F7FA;
+                padding: 0;
+                display: flex;
+                padding: 0px 20px;
+                flex-direction: column-reverse;
+                /* flex-wrap: wrap; */
+
+            }
+
+            .herodiv {
+                width: 100%;
+                height: auto;
+                padding: 35px 20px;
+            }
+
+
+            .herodivsec {
+                width: 100%;
+                height: auto;
+                padding: 10px 0px;
+            }
+
+            .herodivimg {
+                width: 100%;
+                height: 220px;
+            }
+
+            p {
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .smallpara {
+                font-size: 16px;
+                margin-top: 10px;
+                font-weight: lighter;
+            }
+
+            .herosecbutton {
+                width: 80px;
+                margin-top: 20px;
+                height: 34px;
+                font-size: 16px;
+                background-color: #4CAF4F;
+                border-radius: 4px;
+                color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                position: relative;
+            }
+
+            /* cardwork */
+            .containercards {
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-top: 20px;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            /* client sec */
+            .clientsec {
+                width: 100%;
+                height: auto;
+                padding: 0px 50px;
+            }
+
+
+            .clientinfo {
+                width: 100%;
+                height: 80px;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 25px;
+            }
+
+
+            .info {
+                text-align: center;
+                font-size: 16px;
+                font-weight: lighter;
+                margin-top: 7px;
+                font-family: monospace;
+            }
+
+            .iconsec {
+                width: auto;
+                height: 70px;
+
+            }
+
+            .clientslogo {
+                width: 100%;
+                height: 70px;
+            }
+
+            /* cardsec */
+            .cardsec {
+                width: 100%;
+                height: auto;
+                padding: 0;
+            }
+
+            .cardinfo {
+                width: 100%;
+                height: 110px;
+            }
+
+
+
+            .infocard {
+                text-align: center;
+                font-size: 15px;
+                font-weight: lighter;
+                margin-top: 7px;
+                font-family: monospace;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 38px;
+            }
+
+            .containercards {
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-top: 20px;
+                padding: 8px 65px;
+                justify-content: space-between;
+            }
+
+            .card {
+                width: 250px;
+                height: 245px;
+                position: relative;
+            }
+
+
+            .cardsimg {
+                width: 250px;
+                height: 240px;
+            }
+
+            .cardinfo {
+                width: 100%;
+                height: auto;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: x-large;
+            }
+
+            /* learn more */
+            .learnmoresec {
+                width: 100%;
+                height: auto;
+                background-color: blueviolet;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .learnmoresecpic {
+                width: 100%;
+                height: 270px;
+                margin-left: 0;
+            }
+
+            .learnpic {
+                width: 100%;
+                height: 270px;
+            }
+
+            p {
+                font-size: 25px;
+            }
+
+            .smallpara {
+                font-size: 13px;
+                margin-top: 10px;
+                font-weight: lighter;
+            }
+
+            .learndiv {
+                width: 100%;
+                height: auto;
+                margin-top: 0;
+                padding: 5px 0px;
+                /* margin-right: 200px; */
+                /* margin-left: 130px; */
+            }
+
+            .herosecbuttonlearn {
+                width: 100px;
+                margin-top: 10px;
+                margin-left: 89px;
+                height: 34px;
+                font-size: 16px;
+                background-color: #4CAF4F;
+                border-radius: 4px;
+                color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                display: block;
+            }
+
+
+        }
+
+        @media only screen and (max-width: 320px) {
+
+            /* navwork */
+
+            /* nav{
+display: flex;
+justify-content: center;
+} */
+            .baricon {
+                width: 60px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                margin-top: 0;
+                justify-content: center;
+            }
+
+            .logo {
+                width: 200px;
+                height: 50px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* margin-left: -200px; */
+
+            }
+
+            .bar {
+                font-size: 22px;
+                margin-top: -1px;
+            }
+
+            .userloginsec {
+                width: 60px;
+                height: 40px;
+                /* display: flex;
+align-items: center;
+justify-content: center; */
+                display: block;
+                margin-top: 0;
+            }
+
+            .user {
+                font-size: 22px;
+                margin-top: 12px;
+                margin-top: 10px;
+            }
+
+            .bariconsec {
+                width: 60px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                display: none;
+            }
+
+            ul {
+                display: none;
+            }
+
+            /* button sec */
+
+            .buttonsec {
+                width: 60px;
+                height: 50px;
+                gap: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
+
+            }
+
+            button {
+                width: 90px;
+                height: 40px;
+                font-size: 18px;
+                color: #4CAF4F;
+                border-radius: 9px;
+                background-color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                display: none;
+
+            }
+
+            /* herowrk */
+
+            .hero {
+                width: 100%;
+                height: auto;
+                background-color: #F5F7FA;
+                padding: 0;
+                display: flex;
+                padding: 0px 20px;
+                flex-direction: column-reverse;
+                /* flex-wrap: wrap; */
+
+            }
+
+            .herodiv {
+                width: 100%;
+                height: auto;
+                padding: 35px 20px;
+            }
+
+
+            .herodivsec {
+                width: 100%;
+                height: auto;
+                padding: 10px 0px;
+            }
+
+            .herodivimg {
+                width: 100%;
+                height: 188px;
+            }
+
+            p {
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .smallpara {
+                font-size: 16px;
+                margin-top: 10px;
+                font-weight: lighter;
+            }
+
+            .herosecbutton {
+                width: 75px;
+                margin-top: 15px;
+                height: 29px;
+                font-size: 12px;
+                background-color: #4CAF4F;
+                border-radius: 4px;
+                color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                position: relative;
+            }
+
+            /* cardwork */
+            .containercards {
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-top: 20px;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            /* client sec */
+            .clientsec {
+                width: 100%;
+                height: auto;
+                padding: 0px 50px;
+            }
+
+
+            .clientinfo {
+                width: 100%;
+                height: 80px;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 21px;
+            }
+
+
+            .info {
+                text-align: center;
+                font-size: 13px;
+                font-weight: lighter;
+                margin-top: 7px;
+                font-family: monospace;
+            }
+
+            .iconsec {
+                width: auto;
+                height: 70px;
+
+            }
+
+            .clientslogo {
+                width: 100%;
+                height: 70px;
+            }
+
+            /* cardsec */
+            .cardsec {
+                width: 100%;
+                height: auto;
+                padding: 0;
+            }
+
+            .cardinfo {
+                width: 100%;
+                height: 110px;
+            }
+
+
+
+            .infocard {
+                text-align: center;
+                font-size: 11px;
+                font-weight: lighter;
+                margin-top: 7px;
+                font-family: monospace;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 38px;
+            }
+
+            .containercards {
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-top: 20px;
+                padding: 8px 46px;
+                justify-content: space-between;
+            }
+
+            .card {
+                width: 233px;
+                height: 230px;
+                position: relative;
+            }
+
+
+            .cardsimg {
+                width: 233px;
+                height: 230px;
+            }
+
+            .cardinfo {
+                width: 100%;
+                height: auto;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: larger;
+            }
+
+            /* learn more */
+            .learnmoresec {
+                width: 100%;
+                height: auto;
+                background-color: blueviolet;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .learnmoresecpic {
+                width: 100%;
+                height: 247px;
+                margin-left: 0;
+            }
+
+            .learnpic {
+                width: 100%;
+                height: 247px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            .smallpara {
+                font-size: 13px;
+                margin-top: 10px;
+                font-weight: lighter;
+            }
+
+            .learndiv {
+                width: 100%;
+                height: auto;
+                margin-top: 0;
+                padding: 5px 0px;
+                /* margin-right: 200px; */
+                /* margin-left: 130px; */
+            }
+
+            .herosecbuttonlearn {
+                width: 85px;
+                margin-top: 10px;
+                margin-left: 62px;
+                height: 29px;
+                font-size: 12px;
+                background-color: #4CAF4F;
+                border-radius: 4px;
+                color: #F5F7FA;
+                border: none;
+                font-weight: 500;
+                display: block;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="baricon" onclick="barclick(bar)">
+            <div class="bardiv">
+
+            </div>
+            <i class="fa-solid fa-bars bar"></i>
+        </div>
+        <div class="logo">
+            <img src="./Logo.svg">
+        </div>
+        <div class="navlinks">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Service</a>
+
+                    <ul>
+                        <img src="./shinchan 2.jpg" class="dropdownpic">
+                        <!-- <li><a href="#">sql</a></li>
+                    <li><a href="#">text</a></li> -->
+                    </ul>
+
+
+                <li><a href="#">Contact</a>
+                    <ul>
+                        <img src="./shichan 3.jpg" class="dropdownpic">
+                        <!-- <li><a href="#">sql</a></li>
+                    <li><a href="#">text</a></li> -->
+                    </ul>
+                </li>
+                <li><a href="#">Product</a>
+                    <ul>
+                        <img src="./shinchan4.jpg" class="dropdownpic">
+                        <!-- <li><a href="#">sql</a></li>
+                    <li><a href="#">text</a></li> -->
+                    </ul>
+                </li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+
+
+
+        <div class="buttonsec">
+            <button onclick="clickme('login')">
+                Login
+            </button>
+            <div class="loginsec">
+                <!-- <i class="fa-solid fa-user user"></i> -->
+                <h6>
+                    Login
+                </h6>
+                <div class="username">
+                    <input type="text" class="innerusername" placeholder="username...">
+                </div>
+
+
+                <div class="usernamesec">
+                    <input type="password" class="innerusernamesec" placeholder=" password...">
+                </div>
+                <div class="checksec">
+                    <input type="checkbox" class="ceckbox">
+                    <h5>
+                        Remember me
+                    </h5>
+                    <div class="forgotsec">
+                        <a href="#">Forgot Me?</a>
+                    </div>
+                </div>
+
+
+
+
+                <!-- <p class="loginnotesec">Note: For any questions, please use the support forum. </p> -->
+                <input type="submit" class="submit">
+            </div>
+            <button onclick="clicksign('signup')">
+                Sign up
+            </button>
+
+            <div class="signupsec">
+                <!-- <i class="fa-solid fa-user user"></i> -->
+                <h6 class="sign">
+                    Sign in
+                </h6>
+                <div class="username">
+                    <input type="text" class="innerusername" placeholder="user id...">
+                </div>
+
+
+                <div class="usernamesec">
+                    <input type="password" class="innerusernamesec" placeholder=" password...">
+                </div>
+
+                <div class="checksec">
+                    <input type="checkbox" class="ceckbox">
+                    <h5>
+                        Remember me
+                    </h5>
+                    </div>
+                    
+                    <input type="submit" class="submit">
+
+
+            <div class="bariconsec">
+                <i class="fa-solid fa-bars barsec"></i>
+            </div>
+            <div class="userloginsec">
+                <i class="fa-solid fa-user user"></i>
+            </div>
+
+            <!-- <div class="registersec">
+                <i class="fa-solid fa-user user"></i>
+                <input type="text" class="username" placeholder=" text">
+                <h5>OR</h5>
+                <input type="password" class="usernamesec" placeholder=" password ">
+                <input type="submit" class="submit" />
+            </div> -->
+        </div>
+
+    </nav>
+
+    <!-- herosection -->
+
+    <div class="hero">
+        <div class="herodiv">
+            <p>Lesson and insights<br>from 8 years</p>
+            <p class="smallpara">Where to grow your business as a phtographer: site or social media?</p>
+            <button class="herosecbutton" onclick="touchme('')">
+                Register
+            </button>
+            <div class="ragisterdiv">
+
+            </div>
+
+        </div>
+
+        <div class="herodivsec">
+            <img src="./Illustration.svg" class="herodivimg">
+        </div>
+    </div>
+
+    <!-- clientsec -->
+
+    <div class="clientsec">
+        <div class="clientinfo">
+            <h1>
+                Our Clients
+            </h1>
+            <p class="info">
+                We have working with some Fortune 500+ clients
+            </p>
+        </div>
+        <div class="iconsec">
+            <img src="./Clients Logos.svg" class="clientslogo">
+        </div>
+    </div>
+
+    <!-- cardsec -->
+    <div class="cardsec">
+        <div class="cardinfo">
+            <h2>
+                Manage your entire community<br>in a single system
+            </h2>
+            <p class="infocard">
+                Who is Nextcent suitable for?
+            </p>
+        </div>
+        <div class="containercards">
+            <div class="card">
+                <img src="./Membership Organizatios.svg" class="cardsimg">
+            </div>
+            <div class="card">
+                <img src="./National Associations.svg" class="cardsimg">
+            </div>
+            <div class="card">
+                <img src="./National Associations (1).svg" class="cardsimg">
+            </div>
+        </div>
+    </div>
+
+    <!-- learnmoresec -->
+    <div class="learnmoresec">
+        <div class="learnmoresecpic">
+            <img src="./Frame 35 (1).svg" class="learnpic">
+        </div>
+        <div class="learndiv">
+            <p>The unseen of spending 3<br>years at Pixelgrade</p>
+            <p class="smallpara">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet justo ipsum. Sed
+                accumsan quam vitae est varius fringilla. Pellentesque placerat vestibulum lorem sed porta. Nullam
+                mattis tristique iaculis. Nullam pulvinar sit amet risus pretium auctor. Etiam quis massa pulvinar,
+                aliquam quam vitae, tempus sem. Donec elementum pulvinar odio.</p>
+            <button class="herosecbuttonlearn">
+                Learn More
+            </button>
+        </div>
+
+
+    </div>
+
+</body>
+
+<!-- script -->
+<script>
+    let loginsec = document.querySelector('.loginsec')
+    let ragisterdiv = document.querySelector('.ragisterdiv')
+
+    let check = true;
+    function clickme() {
+        //     console.log(dd)
+
+        //    if(dd == 'signup'){
+        //     console.log('hell worels')
+        //    }
+
+        if (check) {
+            loginsec.style.top = '55px'
+               signupsec.style.top = '-550%'
+                  ragisterdiv.style.left = '-740px'
+            check = false;
+        } else {
+            loginsec.style.top = '-550%'
+            check = true;
+        }
+    }
+
+
+
+    // singup sec
+    let signupsec = document.querySelector('.signupsec')
+
+    let wrong = true;
+    function clicksign() {
+
+        if (check) {
+            signupsec.style.top = '55px'
+             loginsec.style.top = '-550%'
+   ragisterdiv.style.left = '-740px'
+            check = false;
+        } else {
+            signupsec.style.top = '-550%'
+            check = true;
+        }
+    }
+   
+
+
+
+    // registersec
+    let right = true;
+    function touchme() {
+
+        if (right) {
+            ragisterdiv.style.left = '200px'
+            loginsec.style.top = '-550%'
+             signupsec.style.top = '-550%'
+            right = false;
+        } else {
+            ragisterdiv.style.left = '-740px'
+            right = true;
+        }
+
+    }
+
+    // signup script
+    // let registersec = document.querySelector('.registersec')
+    // let check = true;
+    // function touchme() {
+    //     if (check) {
+    //         registersec.style.left = '0%'
+    //         check = false;
+    //     } else {
+    //         registersec.style.left = '800%'
+    //         check = true;
+    //     }
+    // }
+</script>
+
+</html> 
